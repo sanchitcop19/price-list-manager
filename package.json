@@ -1,0 +1,37 @@
+{
+  "name": "res-pricelist",
+  "version": "1.0.0",
+  "description": "Price List Management for Roseate Engineering Services",
+  "homepage": "./",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "8204",
+    "category": "app.category.type",
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "author": "Sanchit Batra",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^7.1.2",
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.1.1"
+  }
+}
