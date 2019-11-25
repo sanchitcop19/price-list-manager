@@ -61,7 +61,15 @@ app.get('/add', (req, res) => {
 
 function create_object(org, price){
     var object = {}
-    object[org] = parseInt(price);
+    if (!Array.isArray(org)){
+        object[org] = parseInt(price);
+    }
+    else{
+        for(let i = 0; i < org.length; ++i){
+            object[org[i]] = parseInt(price[i]);
+        }
+    }
+    console.log(object);
     return object;
 }
 

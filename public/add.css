@@ -276,3 +276,7 @@ a.button:hover{
   height: 4px;
   top: calc(50% - 2px);
 }
+
+#submit-button{
+  border: none;
+}
