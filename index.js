@@ -68,10 +68,10 @@ function create_object(org, price){
 app.post('/add', (req, res) => {
     let submission = req.body;
     let entry = {}
-    console.log(submission)
     entry["spec"] = submission.specinput;
     entry["prices"] = create_object(submission.org, submission.price);
     update_store(entry);
+    store.push(entry)
   res.send('Successful');
 })
 
