@@ -80,7 +80,9 @@ app.post('/add', (req, res) => {
     entry["prices"] = create_object(submission.org, submission.price);
     update_store(entry);
     store.push(entry)
-  res.send('Successful');
+  res.sendFile('public/add.html', {
+      root: __dirname
+  });
 })
 
 app.get('/', (req, res) => {

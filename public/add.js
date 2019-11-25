@@ -27,7 +27,11 @@ function create_field(){
 
 function add_organization(){
   let form = document.querySelector('form');
-  form.insertBefore(create_field(), form.childNodes[2])
+  let child = create_field();
+  form.insertBefore(child, form.childNodes[2])
+  child.childNodes[0].focus();
+  child.childNodes[0].select();
+
 }
 
 function remove_organization(){
@@ -45,7 +49,16 @@ let minus = document.getElementById('minus');
  
 plus.addEventListener('click', add_organization);
 minus.addEventListener('click', remove_organization);
-
+document.onkeydown = function(e){
+  e = e || window.event;
+  console.log(e.code);
+  if (e.code == 'ArrowDown'){
+    remove_organization();
+  }
+  else if (e.code == 'ArrowUp'){
+    add_organization();
+  }
+}
 
 /* let submit = document.getElementById('submit-icon');
 
