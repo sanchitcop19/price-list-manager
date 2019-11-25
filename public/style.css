@@ -264,3 +264,13 @@ h4::selection {
     list-style: none;
     padding: inherit;
 }
+
+#nav{
+    text-align: center;
+  }
+.fa-plus{
+    position: absolute;
+    right: 13%;
+    padding: 0.1em;
+    top: 40%;
+  }
