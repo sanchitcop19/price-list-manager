@@ -21,7 +21,7 @@ client.connect(err => {
         //console.log(err);
     })
 })
-
+ 
 app.get('/store', (req, res) => {
     res.json(store)
 })
