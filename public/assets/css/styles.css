@@ -20,3 +20,25 @@ body {
   margin-bottom: 3em;
 }
 
+.footer {
+  display: flex;
+  width: 100vw;
+  position: absolute;
+  bottom: 2rem;
+  color: rgb(147, 147, 147);
+  justify-content: center;
+  transition: var(--transition-1);
+}
+
+.footer>div>a {
+  text-decoration: none;
+  color: rgb(147, 147, 147);
+}
+
+.footer>div>a::-moz-selection {
+  color: rgba(255, 122, 122, 1);
+}
+
+.footer>div>a::selection {
+  color: rgba(255, 122, 122, 1);
+}

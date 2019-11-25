@@ -2,6 +2,7 @@
 
 /* basic stylings ------------------------------------------ */
 body{ 
+  overflow-x: hidden;
 }
 .container 		{
   font-family:'Roboto';
@@ -17,12 +18,21 @@ body{
   height: 50%;
 }
 
+#nav{
+  text-align: center;
+}
+
 #right{
   position: absolute;
   right: 10%;
   top: -20%;
   height: fit-content;
   width: 180px;
+}
+.fa-search{
+  position: absolute;
+  right: 13%;
+  padding: 0.1em;
 }
 
 h2 		 { 
@@ -178,6 +188,28 @@ a.button:hover{
   display:block;
   margin:0.4em auto;
  }
+}
+.footer {
+  display: flex;
+  width: 100vw;
+  position: absolute;
+  bottom: 2rem;
+  color: rgb(147, 147, 147);
+  justify-content: center;
+  transition: var(--transition-1);
+}
+
+.footer>div>a {
+  text-decoration: none;
+  color: rgb(147, 147, 147);
+}
+
+.footer>div>a::-moz-selection {
+  color: rgba(255, 122, 122, 1);
+}
+
+.footer>div>a::selection {
+  color: rgba(255, 122, 122, 1);
 }
 
 #modify{
