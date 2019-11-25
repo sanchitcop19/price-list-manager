@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RES: Add Spec</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./add.css">
+  <script src="https://kit.fontawesome.com/d66392e131.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>Add specification and the corresponding prices here</header>
+<div class = "container">
+
+  <form id = "specform" method = "POST" >
+    
+    <div class="group" id = "specinputdiv">      
+      <input type="text" required placeholder="Specification" id = "specinput" name = "specinput">
+    </div>
+    <div id = "modify">
+    <button type = "button" class="icon-btn add-btn" id = "plus" onclick="() => {}">
+      <div class="add-icon"></div>
+      <div class="btn-txt">Add</div>
+    </button>
+    <button type = "button" class="icon-btn add-btn" id = "minus" onclick="() => {}">  
+      <div class="btn-txt">Remove</div>
+    </button>
+    </div>
+    <div id = "submit-div">
+        <!--<input type="submit" id = "submit" value="">-->
+        <button st>
+          <i class="fa fa-paper-plane fa-3x" id = "submit-icon"></i>
+        </button>
+    </div>
+  </form>
+</div>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./add.js"></script>
+
+</body>
+</html>
