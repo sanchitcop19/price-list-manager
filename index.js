@@ -7,21 +7,28 @@ const client = new mongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 const port = process.env.PORT || 8080
 app.set('json spaces', 4);
 app.use(express.static("public"));
-let store = [];
-client.connect(err => {
-    if (err){
-        return;
-    }
-    const collection = client.db("store").collection("price-list")
-    var cursor = collection.find({});
-    cursor.forEach((doc) => {
-        //console.log(JSON.stringify(doc, null, 4));
-        store.push(doc)
-    }, (err) => {
-        //console.log(err);
+let store;
+
+
+function update_data(){
+    store = [];
+    client.connect(err => {
+        if (err){
+            return;
+        }
+        const collection = client.db("store").collection("price-list")
+        var cursor = collection.find({});
+        cursor.forEach((doc) => {
+            //console.log(JSON.stringify(doc, null, 4));
+            store.push(doc)
+        }, (err) => {
+            //console.log(err);
+        })
     })
-})
- 
+}
+
+update_data();
+
 app.get('/store', (req, res) => {
     res.json(store)
 })
@@ -33,9 +40,11 @@ app.get('/search', (req, res) => {
 })
 
 app.get('/add', (req, res) => {
+    // Make sure to update datastore
     res.sendFile('public/add.html', {
         root: __dirname
     })
+    update_data();
 })
 
 app.get('/', (req, res) => {
