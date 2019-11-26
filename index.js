@@ -46,6 +46,7 @@ app.get('/store', (req, res) => {
 })
 
 app.get('/search', (req, res) => {
+    console.log(store);
     res.sendFile('public/search.html', {
         root: __dirname
     })
@@ -75,9 +76,11 @@ function create_object(org, price){
 
 app.post('/add', (req, res) => {
     let submission = req.body;
+    console.log(submission);
     let entry = {}
     entry["spec"] = submission.specinput;
     entry["prices"] = create_object(submission.org, submission.price);
+    entry["offer-date"] = submission['offer-date-input'];
     update_store(entry);
     store.push(entry)
   res.sendFile('public/add.html', {

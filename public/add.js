@@ -7,10 +7,12 @@ function create_field(){
   input.setAttribute('type', 'text');
   input.setAttribute('placeholder', 'Organization');
   input.setAttribute('name', 'org')
+
   let price = document.createElement('input');
   price.setAttribute('type', 'text');
   price.setAttribute('placeholder', 'Price');
   price.setAttribute('name', 'price')
+
   let span_highlight = document.createElement('span');
   //span_highlight.setAttribute('class', 'highlight');
   
@@ -20,7 +22,6 @@ function create_field(){
   div.appendChild(input);
   div.appendChild(price);
   div.appendChild(span_highlight);
-///  div.appendChild(label);
   
   return div;
 }

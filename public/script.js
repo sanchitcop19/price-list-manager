@@ -65,6 +65,7 @@ const autoCompletejs = new autoComplete({
 	},
 	onSelection: feedback => {
 		const selection = feedback.selection.value.prices;
+		const offer_date = feedback.selection.value['offer-date'];
 		const list = document.createElement("ul");
 		let previous_result = document.querySelector('#result');
 		if (previous_result){
@@ -75,7 +76,7 @@ const autoCompletejs = new autoComplete({
 		// Render selected choice to selection div
 		for (let entry of Object.entries(selection)){
 			const list_item = document.createElement('li');
-			list_item.innerHTML = entry[0] + ': Rs. ' + entry[1];
+			list_item.innerHTML = entry[0] + ': Rs. ' + entry[1] + ' ' + offer_date;
 			list.appendChild(list_item);
 		}
 		

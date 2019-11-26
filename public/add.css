@@ -23,8 +23,9 @@ body{
 }
 .fa-search{
   position: absolute;
-  right: 13%;
+  RIGHT: 13%;
   padding: 0.1em;
+  display: none;
 }
 #right{
   position: absolute;
@@ -63,7 +64,7 @@ input 				{
   border-bottom:1px solid #757575;
 }
 
-input[type="text"] {
+input[type="text"], input[type="date"] {
     /* margin-right: 0px; */
     /* position: relative; */
     left: 50%;
