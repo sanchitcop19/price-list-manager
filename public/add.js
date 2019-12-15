@@ -13,6 +13,11 @@ function create_field(){
   price.setAttribute('placeholder', 'Price');
   price.setAttribute('name', 'price')
 
+  let discount = document.createElement('input');
+  discount.setAttribute('type', 'number');
+  discount.setAttribute('placeholder', 'Discount');
+  discount.setAttribute('name', 'discount')
+
   let span_highlight = document.createElement('span');
   //span_highlight.setAttribute('class', 'highlight');
   
@@ -21,6 +26,7 @@ function create_field(){
   
   div.appendChild(input);
   div.appendChild(price);
+  div.appendChild(discount);
   div.appendChild(span_highlight);
   
   return div;
@@ -50,6 +56,7 @@ let minus = document.getElementById('minus');
  
 plus.addEventListener('click', add_organization);
 minus.addEventListener('click', remove_organization);
+
 document.onkeydown = function(e){
   e = e || window.event;
   console.log(e.code);

@@ -64,7 +64,7 @@ input 				{
   border-bottom:1px solid #757575;
 }
 
-input[type="text"], input[type="date"] {
+input[type="text"], input[type="date"], input[type="number"] {
     /* margin-right: 0px; */
     /* position: relative; */
     left: 50%;

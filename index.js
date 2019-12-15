@@ -11,8 +11,10 @@ const username = "sanchitcop19";
 const uri = "mongodb+srv://" + username + ":" + process.env.PASSWORD + "@pricelistmanager-hnvmq.mongodb.net/test?retryWrites=true&w=majority";
 const client = new mongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const port = process.env.PORT || 8080
+
 app.set('json spaces', 4);
 app.use(express.static("public"));
+
 let store, collection;
 
 
@@ -75,17 +77,22 @@ function create_object(org, price){
 }
 
 app.post('/add', (req, res) => {
+
     let submission = req.body;
     console.log(submission);
+
     let entry = {}
     entry["spec"] = submission.specinput;
     entry["prices"] = create_object(submission.org, submission.price);
     entry["offer-date"] = submission['offer-date-input'];
+    entry["discount"] = submission['discount'];
+
     update_store(entry);
     store.push(entry)
-  res.sendFile('public/add.html', {
+    res.sendFile('public/add.html', {
       root: __dirname
   });
+  
 })
 
 app.get('/', (req, res) => {

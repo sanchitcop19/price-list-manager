@@ -66,6 +66,7 @@ const autoCompletejs = new autoComplete({
 	onSelection: feedback => {
 		const selection = feedback.selection.value.prices;
 		const offer_date = feedback.selection.value['offer-date'];
+		const discount = feedback.selection.value['discount'];
 		const list = document.createElement("ul");
 		let previous_result = document.querySelector('#result');
 		if (previous_result){
@@ -74,10 +75,12 @@ const autoCompletejs = new autoComplete({
 		}
 		list.setAttribute('id', 'result')
 		// Render selected choice to selection div
+		let index = 0;
 		for (let entry of Object.entries(selection)){
 			const list_item = document.createElement('li');
-			list_item.innerHTML = entry[0] + ': Rs. ' + entry[1] + ' ' + offer_date;
+			list_item.innerHTML = entry[0] + ':\xa0\xa0\xa0\ Rs. ' + entry[1] + ' ' + discount[index] + "%" + " (" + offer_date +  ")";
 			list.appendChild(list_item);
+			++index;
 		}
 		
 		document.querySelector(".selection").appendChild(list);
