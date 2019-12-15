@@ -18,6 +18,10 @@ body{
   height: 50%;
 }
 
+#link-search:visited{
+  color: black
+}
+
 #nav{
   text-align: center;
 }
